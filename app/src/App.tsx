@@ -22,6 +22,9 @@ function App() {
           alt="CircleCI Logo"
         />
       </a>
+      <p>
+        If you are seeing this, your EKS cluster deployed by CircleCI is working.
+      </p>
     </Container>
   );
 }
