@@ -128,6 +128,7 @@ jobs:
       - run:
           name: Get public endpoint
           command: |
+            kubectl wait svc helloapp --for=jsonpath='{.status.loadBalancer.ingress[].hostname}'
             export APP_HOSTNAME=$(kubectl get svc helloapp -o jsonpath='{.status.loadBalancer.ingress[].hostname}')
             echo The application has been deployed and is now accessible at
             echo http://$APP_HOSTNAME
